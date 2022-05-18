@@ -1,0 +1,62 @@
+.search-input {
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.mat-button-add{
+  margin-left: 20px;
+}
+
+.tool-bar {
+  display: flex;
+  background-color: #212529;
+  color: #e6ebf1;
+}
+
+.card-container {
+  display: flex;
+}
+.example-card {
+  margin-left: 20px;
+  min-width: 300px;
+  max-width: 300px;
+  margin-top: 10px;
+  box-shadow: #6c757d;
+  max-height: 300px;
+}
+
+.mat-card-header {
+  border-bottom: solid 4px #ddd;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.edit-button {
+  background-color: #007bff;
+}
+.delete-button {
+  background-color: #6c757d;
+}
+mat-list-item {
+  border-bottom: solid 4px #ddd;
+}
+mat-card-title {
+  display: flex;
+  justify-items: end;
+}
+mat-card-subtitle {
+  display: flex;
+  justify-self: self-end;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+}
+.mat-label-email{
+  margin-left: 10px;
+}
+.mat-label-phone {
+  margin-left: 10px;
+}

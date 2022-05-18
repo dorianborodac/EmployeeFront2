@@ -1,0 +1,59 @@
+<!-- Toolbar-->
+<mat-toolbar class="tool-bar">
+  <span matPrefix>Employee Manager</span>
+    <button mat-raised-button class="mat-button-add" (click)="openDialog()">
+      <mat-label>Add Employee</mat-label>
+      <mat-icon>add</mat-icon>
+    </button>
+  <mat-form-field class="search-input">
+    <mat-label>Search Employee</mat-label>
+    <input matInput (keyup)="searchEmployees(key.value)" #key type="search">
+
+  </mat-form-field>
+</mat-toolbar>
+
+<!-- Card Employee Example-->
+<div class="card-container" fxLayout="row wrap" fxLayout.xs="column wrap" fxLayoutGap="15px" fxLayoutAlign="start">
+<mat-card fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="33%" class="example-card" *ngFor="let employee of employees">
+  <!-- Card Example Head-->
+  <mat-card-header class="mat-card-header">
+    <mat-card-title>{{employee?.name}}</mat-card-title>
+    <mat-card-subtitle>{{employee?.jobTitle}}</mat-card-subtitle>
+    <img mat-card-avatar src="{{employee?.imageUrl}}" alt="">
+  </mat-card-header>
+  <!-- Card Example Content-->
+  <mat-card-content class="mat-card-content">
+    <mat-list class="mat-list">
+      <mat-list-item class="mat-item-email">
+        <mat-icon class="mat-icon-email">email</mat-icon>
+        <mat-label class="mat-label-email">{{employee?.email}}</mat-label>
+      </mat-list-item>
+      <mat-list-item class="mat-item-phone">
+        <mat-icon class="mat-icon-phone">phone</mat-icon>
+        <mat-label class="mat-label-phone">{{employee?.phone}}</mat-label>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <!-- Card Example Action: Button(Edit / Delete) -->
+  <mat-card-actions class="mat-card-actions">
+    <mat-action-list>
+      <button mat-button class="edit-button" (click)="openDialog(employee)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-button class="delete-button" (click)="onDeleteEmployee(employee?.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-action-list>
+  </mat-card-actions>
+</mat-card>
+
+  <div class="no-employee" *ngIf="employees?.length == 0">
+    <div>
+      <p>Not found!</p>
+    </div>
+  </div>
+
+</div>
+
+
+

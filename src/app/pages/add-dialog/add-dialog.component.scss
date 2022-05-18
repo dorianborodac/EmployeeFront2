@@ -1,0 +1,13 @@
+.display-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: flex-end;
+
+  button {
+    margin-left: 5px;
+  }
+}
