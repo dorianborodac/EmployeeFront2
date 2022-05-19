@@ -25,18 +25,6 @@ export class EmployeeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getEmployees();
-    await this.initForm();
-  }
-
-  initForm(data?: EmployeeDTO): void {
-    this.form = this.formBuilder.group({
-      id: [data && data.id ? data.id : ''],
-      name: [[data && data.name ? data.name : ''], [Validators.required, Validators.pattern('[A-Za-z]{1,10} [A-Za-z]{1,10}')]],
-      email: [[data && data.email ? data.email : ''], [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      jobTitle: [[data && data.jobTitle ? data.jobTitle : ''], [Validators.required]],
-      phone: [[data && data.phone ? data.phone : ''], [Validators.required, Validators.pattern('[0-9]{2}-[0-9]{3}-[0-9]{3}')]],
-      imageUrl: [[data && data.imageUrl ? data.imageUrl : ''], [Validators.required, Validators.pattern('https://.*')]]
-    }, );
   }
 
   public async getEmployees(): Promise<void> {

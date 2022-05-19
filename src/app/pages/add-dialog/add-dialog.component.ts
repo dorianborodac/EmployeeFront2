@@ -61,7 +61,7 @@ export class AddDialogComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           });
-          this.dialogRef.close(data);
+          this.dialogRef.close();
         } catch (error) {
           console.log(error);
         } finally {
@@ -93,11 +93,7 @@ export class AddDialogComponent implements OnInit {
   }
 
   close(): void {
-    this.form.get('name')?.setValue(this.employees.name);
-    this.form.get('jobTitle')?.setValue(this.employees.jobTitle);
-    this.form.get('email')?.setValue(this.employees.email);
-    this.form.get('phone')?.setValue(this.employees.phone);
-    this.form.get('imageUrl')?.setValue(this.employees.imageUrl);
+    this.dialogRef.close();
   }
 
   getError(controlName: string): string{
